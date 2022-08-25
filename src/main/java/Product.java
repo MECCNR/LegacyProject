@@ -1,3 +1,7 @@
+import java.util.Arrays;
+
+import static java.util.regex.Pattern.matches;
+
 public class Product {
     protected int id;
     protected String name;
@@ -19,6 +23,14 @@ public class Product {
 
     public String toString() {
         return id + " " + name + " " + price;
+    }
+
+    public boolean matches(String search) {
+        if (getName().contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

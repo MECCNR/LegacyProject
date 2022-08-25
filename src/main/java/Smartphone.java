@@ -9,4 +9,12 @@ public class Smartphone extends Product {
     public String toString() {
         return id + " " + name + " " + price + " " + manufacturer;
     }
+
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
