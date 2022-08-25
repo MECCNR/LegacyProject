@@ -16,6 +16,8 @@ public class ManagerTest {
 
     Book book2 = new Book(22, "Peter Pan", 101, "Barry");
 
+    Book book3 = new Book(33, "Samurai", 102, "Nishida");
+
     Smartphone smart1 = new Smartphone(111, "Samsun", 11111, "Sam");
 
     Smartphone smart2 = new Smartphone(22, "Noka", 12221, "Finns");
@@ -42,6 +44,18 @@ public class ManagerTest {
 
         Product[] expected = {book1, book2};
         Product[] actual = manage.searchBy("Peter Pan");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void bookNotSameTest() {
+        manage.add(book1);
+        manage.add(book2);
+        manage.add(book3);
+
+        Product[] expected = {book3};
+        Product[] actual = manage.searchBy("Samurai");
 
         Assertions.assertArrayEquals(expected, actual);
     }

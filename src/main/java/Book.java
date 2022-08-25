@@ -9,4 +9,12 @@ public class Book extends Product {
     public String toString() {
         return id + " " + name + " " + price + " " + author;
     }
+
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
